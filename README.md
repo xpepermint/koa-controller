@@ -81,4 +81,4 @@ module.exports = {
 };
 ```
 
-Notice the `this.body` call? Every `action` inside a controller has access to [koa context](http://koajs.com/#context). Check [koa-route](https://github.com/koajs/route) for details.
+Notice the `this.body` call? Every `action` inside a controller has access to [Koa context](http://koajs.com/#context). Check [koa-route](https://github.com/koajs/route) for details.

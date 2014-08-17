@@ -20,8 +20,10 @@
     "route",
     "routes",
     "routing",
+    "router",
     "mvc",
-    "rest"
+    "rest",
+    "rails"
   ],
   "author": "xpepermint",
   "license": "MIT",
