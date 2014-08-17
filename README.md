@@ -1,5 +1,9 @@
 # koa-controller
 
+![Build Status](https://travis-ci.org/xpepermint/koa-controller.svg?branch=master)
+[![NPM version](https://badge.fury.io/js/koa-controller.svg)](http://badge.fury.io/js/koa-controller)
+[![Dependency Status](https://gemnasium.com/xpepermint/koa-controller.svg)](https://gemnasium.com/xpepermint/koa-controller)
+
 MVC-style implementation of routes and controllers for [Koa](https://github.com/koajs/koa), based on a simple route middleware [koa-route](https://github.com/koajs/route).
 
 ## Installation
@@ -31,7 +35,7 @@ app.use(controller({
 Config file is a simple key-value object where the `key` represents a route match and a `value` represents a target (e.g. controller/action). See the examples bellow.
 
 ```js
-# config/routes.js
+// config/routes.js
 module.exports = {
 
   // controller#action
@@ -59,7 +63,7 @@ Check [koa-route](https://github.com/koajs/route) and [path-to-regexp](https://g
 Controller is a simple key-value object where a `key` represents the name of an `action` and a `value` represents a generator function that processes the request. See the examples bellow.
 
 ```js
-# app/controllers/users.js
+// app/controllers/users.js
 module.exports = {
 
   find: function*() {
