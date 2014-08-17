@@ -1,8 +1,6 @@
 # koa-controller
 
-![Build Status](https://travis-ci.org/xpepermint/koa-controller.svg?branch=master) 
-[![NPM version](https://badge.fury.io/js/koa-controller.svg)](http://badge.fury.io/js/koa-controller)
-[![Dependency Status](https://gemnasium.com/xpepermint/koa-controller.svg)](https://gemnasium.com/xpepermint/koa-controller)
+![Build Status](https://travis-ci.org/xpepermint/koa-controller.svg?branch=master) [![NPM version](https://badge.fury.io/js/koa-controller.svg)](http://badge.fury.io/js/koa-controller) [![Dependency Status](https://gemnasium.com/xpepermint/koa-controller.svg)](https://gemnasium.com/xpepermint/koa-controller)
 
 MVC-style implementation of routes and controllers for [Koa](https://github.com/koajs/koa), based on a simple route middleware [koa-route](https://github.com/koajs/route).
 
