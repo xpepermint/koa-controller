@@ -17,11 +17,14 @@ npm install koa-controller --save
 Attach the middleware.
 
 ```js
+var koa = require('koa');
+var app = koa();
 var controller = require('koa-controller');
 app.use(controller());
+app.listen(3000);
 ```
 
-By default the middleware expects that the controller exists at `app/controllers/{controller}.js` and the route file exists at `config/routes.js`. We can easily change the default behavior as shown bellow.
+By default the middleware expects that the controller exists at `app/controllers/{controller}.js` and that the config file exists at `config/routes.js`. We can easily change the default behavior as shown bellow.
 
 ```js
 app.use(controller({
@@ -32,7 +35,7 @@ app.use(controller({
 
 ## Config
 
-Config file is a simple key-value object where the `key` represents a route match and a `value` represents a target (e.g. controller/action). See the examples bellow.
+Config file is a simple key-value object where the `key` represents a `route` and a `value` represents a `task` (e.g. controller/action). See the examples bellow.
 
 ```js
 // config/routes.js
@@ -60,7 +63,7 @@ Check [koa-route](https://github.com/koajs/route) and [path-to-regexp](https://g
 
 ## Controller
 
-Controller is a simple key-value object where a `key` represents the name of an `action` and a `value` represents a generator function that processes the request. See the examples bellow.
+Controller is a simple key-value object where a `key` represents the name of an `action` and a `value` represents a generator function that processes the request. See the controller example bellow.
 
 ```js
 // app/controllers/users.js
