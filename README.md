@@ -27,7 +27,7 @@ By default the middleware expects that the controller exists at `app/controllers
 ```js
 app.use(controller({
   configPath: 'my/path/routes.js',
-  controllerPath: 'my/controllers/{controller}.js'
+  controllerPath: 'my/controllers/{controller}.js' // note that {controller} is a variable thus you should use it
 }));
 ```
 
