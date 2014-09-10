@@ -2,7 +2,7 @@
 
 ![Build Status](https://travis-ci.org/xpepermint/koa-controller.svg?branch=master)&nbsp;[![NPM version](https://badge.fury.io/js/koa-controller.svg)](http://badge.fury.io/js/koa-controller)&nbsp;[![Dependency Status](https://gemnasium.com/xpepermint/koa-controller.svg)](https://gemnasium.com/xpepermint/koa-controller)
 
-`Koa-controller` in a middleware for `Koa` which handles the routing of your application where related functionalities are splited into `routes`, `controllers` and `constraints`. The module is built on top of [koa-route](https://github.com/koajs/route) middleware. It optimizes your code and brings the following features into your project:
+`Koa-controller` in a middleware for `Koa` which handles the routing of your application where related functionalities are splitted into `routes`, `controllers` and `constraints`. The module is built on top of [koa-route](https://github.com/koajs/route) middleware. It optimizes your code and brings the following features into your project:
 - Flexible `routes` handler with a single point of router configuration.
 - Application `controllers` for handling application responses.
 - Access control middleware with `constraints` for limiting requests to application controllers, handling user authentication and security.
