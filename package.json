@@ -1,6 +1,6 @@
 {
   "name": "koa-controller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Middleware for Koa which handles the routing of your application where related functionalities are splited into routes, controllers and constraints.",
   "main": "index.js",
   "scripts": {
