@@ -1,7 +1,7 @@
 {
   "name": "koa-controller",
-  "version": "0.0.8",
-  "description": "MVC-style implementation of routes and controllers for Koa",
+  "version": "1.0.0",
+  "description": "Middleware for Koa which handles the routing of your application where related functionalities are splited into routes, controllers and constraints.",
   "main": "index.js",
   "scripts": {
     "test": "node --harmony ./node_modules/jasmine-node/bin/jasmine-node ./spec --verbose"
@@ -17,6 +17,10 @@
     "koa",
     "controller",
     "controllers",
+    "constraint",
+    "constraints",
+    "policy",
+    "policies",
     "route",
     "routes",
     "routing",
@@ -38,7 +42,7 @@
   },
   "dependencies": {
     "koa-compose": "^2.3.0",
-    "koa-route": "^2.0.0",
+    "koa-route": "^2.1.0",
     "lodash": "^2.4.1"
   }
 }

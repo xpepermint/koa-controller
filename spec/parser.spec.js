@@ -2,50 +2,50 @@ var parser = require('../lib/parser');
 
 describe('parser', function() {
 
-  describe('parseMethods', function() {
+  describe('methods', function() {
 
     it('should parse `methods` from a `task string`', function() {
-      expect(parser.parseMethods('POST /users')).toEqual(['post']);
-      expect(parser.parseMethods('get|put /users')).toEqual(['get', 'put']);
+      expect(parser.methods('POST /users')).toEqual(['post']);
+      expect(parser.methods('get|put /users')).toEqual(['get', 'put']);
     });
 
     it('should return `[get]` if a `task string` contains no method', function() {
-      expect(parser.parseMethods('/users')).toEqual(['get']);
+      expect(parser.methods('/users')).toEqual(['get']);
     });
 
   });
 
-  describe('parsePath', function() {
+  describe('path', function() {
 
     it('should parse a `path` from a `task string`', function() {
-      expect(parser.parsePath('POST /users')).toBe('/users');
+      expect(parser.path('POST /users')).toBe('/users');
     });
 
   });
 
-  describe('guessTask', function() {
+  describe('taskType', function() {
 
-    it('should guess the `function` task from a `target string`', function() {
-      expect(parser.guessTask(function*(){})).toBe('function');
+    it('should guess the `generator` task from a `target string`', function() {
+      expect(parser.taskType(function*(){})).toBe('generator');
     });
 
     it('should guess the `controller` task from a `target string`', function() {
-      expect(parser.guessTask('users#index')).toBe('controller');
+      expect(parser.taskType('users#index')).toBe('controller');
     });
 
     it('should guess the `redirect` task from a `target string`', function() {
-      expect(parser.guessTask('/go/home')).toBe('redirect');
-      expect(parser.guessTask('http://google.com')).toBe('redirect');
-      expect(parser.guessTask('https://google.com')).toBe('redirect');
-      expect(parser.guessTask('ftp://google.com')).toBe('redirect');
+      expect(parser.taskType('/go/home')).toBe('redirect');
+      expect(parser.taskType('http://google.com')).toBe('redirect');
+      expect(parser.taskType('https://google.com')).toBe('redirect');
+      expect(parser.taskType('ftp://google.com')).toBe('redirect');
     });
 
   });
 
-  describe('parseController', function() {
+  describe('controller', function() {
 
     it('should parse a `controller` and an `action` name from a `task string`', function() {
-      expect(parser.parseController('users#create')).toEqual({ controller: 'users', action: 'create' });
+      expect(parser.controller('users#create')).toEqual({ controller: 'users', action: 'create' });
     });
 
   });

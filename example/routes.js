@@ -1,10 +1,9 @@
 module.exports = {
 
-  '/': '/users',
-  'get /users': 'controller#index',
-  'post|put /users/:id?': 'controller#create',
-  'delete /delete': function *() {
-    this.body = 'delete';
-  }
+  '/': { to: '/users' },
+  'get /users': { to: 'controller#index' },
+  'post|put /users/:id?': { to: 'controller#create' },
+  'delete /delete': { to: function *() { this.body = 'delete'; }},
+  'get /secure': { to: 'controller#secure', constraint: 'constraint#basic' }
 
 };

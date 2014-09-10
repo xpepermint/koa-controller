@@ -2,13 +2,16 @@ var routes = require('..');
 var koa = require('koa');
 var request = require('request');
 
-describe('middleware', function() {
+describe('routes', function() {
 
   beforeEach(function() {
     this.port = 3001;
     this.url = 'http://localhost:'+this.port;
     this.app = koa();
-    this.app.use(routes({ configPath: __dirname+'/../example/routes.js', controllerPath: __dirname+'/../example/{controller}.js' }));
+    this.app.use(routes({
+      routesPath: __dirname+'/../example/routes.js',
+      controllerPath: __dirname+'/../example/{controller}.js'
+    }));
     this.server = this.app.listen(this.port);
   });
 

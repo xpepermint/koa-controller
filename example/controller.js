@@ -6,6 +6,10 @@ module.exports = {
 
   create: function *(id) {
     this.body = id ? 'update:'+id : 'create';
+  },
+
+  secure: function *() {
+    this.body = 'secret';
   }
 
 };
