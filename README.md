@@ -6,6 +6,7 @@
 - Flexible `routes` handler with a single point of router configuration.
 - Application `controllers` for handling application responses.
 - Access control middleware with `constraints` for limiting requests to application controllers, handling user authentication and security.
+- Context tools for easy dynamic data manipulation.
 
 ## Installation
 
@@ -20,8 +21,9 @@ Attach the middleware.
 ```js
 var koa = require('koa');
 var app = koa();
-var controller = require('koa-controller');
-app.use(controller());
+var kc = require('koa-controller');
+app.use(kc.tools()); // optional
+app.use(kc.router());
 app.listen(3000);
 ```
 
@@ -112,3 +114,21 @@ module.exports = {
 ```
 
 Note that constraints are very much like controllers thus every constraint action has access to [Koa context](http://koajs.com/#context). Check [koa-route](https://github.com/koajs/route) for details.
+
+## Tools
+
+By attaching `kc.tools()` middleware the context features are extended.
+
+### ctx.form([names])
+
+Type: `Function`
+Returns: `Object`
+
+Parsed request body data. You can retrive only selected attributes by specifying a list of `names`.
+
+```js
+console.log( _.form() );
+// -> { 'name': 'John', 'email': 'john@gmail.com', 'age': 33 }
+console.log( _.form('name', 'age') );
+// -> { 'name': 'John', 'age': 33 }
+```
